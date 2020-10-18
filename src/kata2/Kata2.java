@@ -9,8 +9,9 @@ public class Kata2 {
 
     public static void main(String[] args) {
         Integer[] data = {1,8,5,4,9,7,88,8,5,4,22,6,8,2,4};
-        Map<Integer,Integer> histogram = new HashMap<Integer,Integer>();
-        
+        Histogram histo = new Histogram(data);
+        Map<Integer,Integer> histogr = histo.getHistogram();
+        /*
         for (Integer key : data) {
             histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
@@ -25,7 +26,7 @@ public class Kata2 {
         }
         */
         
-        Iterator<Map.Entry<Integer,Integer>> entries = histogram.entrySet().iterator();
+        Iterator<Map.Entry<Integer,Integer>> entries = histogr.entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<Integer, Integer> entry = entries.next();
             System.out.println("Key = " + entry.getKey() + "value = " + entry.getValue());
